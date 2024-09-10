@@ -1,0 +1,60 @@
+body, html {
+    margin: 0;
+    padding: 0;
+    height: 100%;
+    display: flex;
+    flex-direction: column;
+}
+
+header {
+    background-color: #9999ff;
+    padding: 20px;
+    text-align: center;
+    width: 100%;
+    position: fixed;
+    top: 0;
+    z-index: 1000;
+}
+
+footer {
+    background-color: lime;
+    padding: 10px;
+    text-align: center;
+    width: 100%;
+    position: fixed;
+    bottom: 0;
+    z-index: 1000;
+}
+
+main {
+    display: flex;
+    flex: 1;
+    margin-top: 50px; /* Height of the header */
+    overflow: hidden;
+}
+
+.content {
+    flex: 1;
+    padding: 20px;
+    background-color: white;
+}
+
+.scrollable-well {
+    width: 200px;
+    background-color: red;
+    overflow-y: auto;
+    padding: 20px;
+    /*padding-top: 100px;*/ /* Ensure the content starts below the header */
+}
+
+.scrollable-well::before {
+    content: '';
+    display: block;
+    height: 80px; /* Height of the header */
+}
+
+.scrollable-well::after {
+    content: '';
+    display: block;
+    height: 50px; /* Height of the footer */
+}
